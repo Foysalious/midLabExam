@@ -9,6 +9,14 @@ router.get('/', (req, res) => {
   res.render('employee/index');
 });
 
+router.get('/MyProfile', (req, res) => {
+  // const username = loggedUser.user;
+  const username = 'test';
+  const user = users.find((user) => user.username === username);
+
+  res.render('employee/myProfile', { user });
+});
+
 
 
 // router.get('/AllEmployeeList', (req, res) => {
