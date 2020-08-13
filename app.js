@@ -5,10 +5,13 @@ var bodyParser = require('body-parser');
 var cookieParser = require('cookie-parser');
 var app = express();
 
-var index = require('./controllers/index');
-var adminHome = require('./controllers/adminHome');
-var logout = require('./controllers/logout');
-var viewEmployee = require('./controllers/viewEmployee');
+// Routers
+const loginController = require('./controller/loginController');
+const employeeController = require('./controller/employeeController');
+const adminController = require('./controller/adminController');
+
+// App initialization
+const app = express();
 
 //configuration
 app.set('view engine', 'ejs');
@@ -17,13 +20,11 @@ app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({extended:true}));
 app.use(cookieParser());
 
-app.use('/', index);
-app.use('/login',index);
-app.use('/logout',logout);
-app.use('/admin',adminHome);
-app.use('/employee',employeeHome);
-app.use('/home',adminHome);
-app.use('/viewEmployee',viewEmployee);
+// Middleware
+app.use(bodyParser());
+app.use('/login', loginController);
+app.use('/admin', adminController);
+app.use('/employee', employeeController);
 
 //server startup
 var serverPort=3000;
