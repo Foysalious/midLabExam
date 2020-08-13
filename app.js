@@ -20,7 +20,8 @@ app.use(cookieParser());
 app.use('/', index);
 app.use('/login',index);
 app.use('/logout',logout);
-app.use('/adminHome',adminHome);
+app.use('/admin',adminHome);
+app.use('/employee',employeeHome);
 app.use('/home',adminHome);
 app.use('/viewEmployee',viewEmployee);
 
@@ -28,5 +29,5 @@ app.use('/viewEmployee',viewEmployee);
 var serverPort=3000;
 app.listen(serverPort, function(){
     console.log("node-application server started at", serverPort);
-    
+
 });

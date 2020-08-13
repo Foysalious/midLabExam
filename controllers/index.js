@@ -20,7 +20,7 @@ router.post('/', function(request, response){
             response.cookie('loginUser', request.body.username);
             var loginUser = request.cookies['loginUser'];
             console.log('successfull login with ', loginUser);
-            response.redirect('/adminHome');
+            response.redirect('/admin');
         }
         else{
 			response.send('invalid username/password');
