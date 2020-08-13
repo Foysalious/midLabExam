@@ -17,6 +17,10 @@ router.get('/MyProfile', (req, res) => {
   res.render('employee/myProfile', { user });
 });
 
+router.get('/UpdateProfile', (req, res) => {
+  res.render('employee/updateProfile');
+});
+
 
 
 // router.get('/AllEmployeeList', (req, res) => {
