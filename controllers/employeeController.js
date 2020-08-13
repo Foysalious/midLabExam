@@ -22,9 +22,4 @@ router.get('/UpdateProfile', (req, res) => {
 });
 
 
-
-// router.get('/AllEmployeeList', (req, res) => {
-//   res.render('admin/allEmployee', { users });
-// });
-
 module.exports = router;
